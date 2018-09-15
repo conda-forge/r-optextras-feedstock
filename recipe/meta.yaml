@@ -1,5 +1,4 @@
 {% set version = '2016-8.8' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,29 +9,31 @@ package:
 source:
   fn: optextras_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/optextras_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/optextras/optextras_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/optextras_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/optextras/optextras_{{ version }}.tar.gz
   sha256: 8c91d0dadfbd545610bcfb84e7b205be3ca05c2005062266b3c04e844df8980f
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win32]
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-numderiv
-
   run:
     - r-base
     - r-numderiv
 
 test:
   commands:
-    - $R -e "library('optextras')"  # [not win]
+    - $R -e "library('optextras')"           # [not win]
     - "\"%R%\" -e \"library('optextras')\""  # [win]
 
 about:
@@ -52,8 +53,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
