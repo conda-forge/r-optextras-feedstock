@@ -14,9 +14,9 @@ source:
   sha256: 8c91d0dadfbd545610bcfb84e7b205be3ca05c2005062266b3c04e844df8980f
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
-  skip: true  # [win32]
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -48,8 +48,7 @@ about:
     an axial search to seek lower points on the objective function surface.  Includes
     forward, central and backward gradient approximation codes.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
