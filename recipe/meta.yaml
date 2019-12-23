@@ -1,4 +1,4 @@
-{% set version = '2016-8.8' %}
+{% set version = "2019-12.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/optextras_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/optextras/optextras_{{ version }}.tar.gz
-  sha256: 8c91d0dadfbd545610bcfb84e7b205be3ca05c2005062266b3c04e844df8980f
+  sha256: 59006383860826be502ea8757e39ed94338f04d246c4fc398a088e004d8b13eb
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1002
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
