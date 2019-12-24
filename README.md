@@ -7,7 +7,7 @@ Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
-Summary: Tools to assist in safely applying user generated objective and  derivative function to optimization programs. These are primarily function  minimization methods with at most bounds and masks on the parameters. Provides a way to check the basic computation of objective functions that  the user provides, along with proposed gradient and Hessian functions,  as well as to wrap such functions to avoid failures when inadmissible parameters  are provided. Check bounds and masks. Check scaling or optimality conditions.  Perform an axial search to seek lower points on the objective function surface.  Includes forward, central and backward gradient approximation codes.
+Summary: Tools to assist in safely applying user generated objective and derivative function to optimization programs. These are primarily function minimization methods with at most bounds and masks on the parameters. Provides a way to check the basic computation of objective functions that the user provides, along with proposed gradient and Hessian functions, as well as to wrap such functions to avoid failures when inadmissible parameters are provided. Check bounds and masks. Check scaling or optimality conditions. Perform an axial search to seek lower points on the objective function surface. Includes forward, central and backward gradient approximation codes.
 
 
 
@@ -116,11 +116,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
-* [@cbrueffer](https://github.com/cbrueffer/)
 * [@conda-forge/r](https://github.com/conda-forge/r/)
-* [@daler](https://github.com/daler/)
-* [@dbast](https://github.com/dbast/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
 
