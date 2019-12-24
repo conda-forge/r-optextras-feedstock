@@ -1,4 +1,4 @@
-{% set version = "2019-12.4" %}
+{% set version = '2019-12.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: optextras_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/optextras_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/optextras/optextras_{{ version }}.tar.gz
   sha256: 59006383860826be502ea8757e39ed94338f04d246c4fc398a088e004d8b13eb
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,23 +38,33 @@ test:
 about:
   home: https://CRAN.R-project.org/package=optextras
   license: GPL-2
-  summary: Tools to assist in safely applying user generated objective and  derivative function
-    to optimization programs. These are primarily function  minimization methods with
+  summary: Tools to assist in safely applying user generated objective and derivative function
+    to optimization programs. These are primarily function minimization methods with
     at most bounds and masks on the parameters. Provides a way to check the basic computation
-    of objective functions that  the user provides, along with proposed gradient and
-    Hessian functions,  as well as to wrap such functions to avoid failures when inadmissible
-    parameters  are provided. Check bounds and masks. Check scaling or optimality conditions.  Perform
-    an axial search to seek lower points on the objective function surface.  Includes
-    forward, central and backward gradient approximation codes.
+    of objective functions that the user provides, along with proposed gradient and
+    Hessian functions, as well as to wrap such functions to avoid failures when inadmissible
+    parameters are provided. Check bounds and masks. Check scaling or optimality conditions.
+    Perform an axial search to seek lower points on the objective function surface.
+    Includes forward, central and backward gradient approximation codes.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+
+# Package: optextras
+# Version: 2019-12.4
+# Date: 2019-12-04
+# Title: Tools to Support Optimization Possibly with Bounds and Masks
+# Authors@R: c( person(given = c("John", "C"), family = "Nash", role =c("aut", "cre"), email = "nashjc@uottawa.ca") )
+# Maintainer: John C Nash <nashjc@uottawa.ca>
+# Description: Tools to assist in safely applying user generated objective and derivative function to optimization programs. These are primarily function minimization methods with at most bounds and masks on the parameters. Provides a way to check the basic computation of objective functions that the user provides, along with proposed gradient and Hessian functions, as well as to wrap such functions to avoid failures when inadmissible parameters are provided. Check bounds and masks. Check scaling or optimality conditions. Perform an axial search to seek lower points on the objective function surface. Includes forward, central and backward gradient approximation codes.
+# License: GPL-2
+# Imports: numDeriv, utils
+# NeedsCompilation: no
+# Packaged: 2019-12-04 17:30:36 UTC; john
+# Author: John C Nash [aut, cre]
+# Repository: CRAN
+# Date/Publication: 2019-12-20 13:20:07 UTC
